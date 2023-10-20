@@ -6,10 +6,19 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; set; }
+
+    [Header("Gameobject")]
     public List<GameObject> lockedCars;
     public List<GameObject> unLockedCars;
+
+    private GameObject playerCar;
+
+    [Header("Level Config")]
+    public List<LevelConfig> levelConfigs;
+
+    [Header("Variable")]
     public int currentLevel = 5;
-    private GameObject car;
+    public int choosenCar = 0;
     public int currentLevelIndex
     { 
         get 
@@ -22,10 +31,6 @@ public class GameManager : MonoBehaviour
             currentLevel = value;
         } 
     }
-
-    public int choosenCar = 0;
-    public List<LevelConfig> levelConfigs;
-    private GameObject playerCar;
 
     private void Awake()
     {

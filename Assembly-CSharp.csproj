@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3290BFE7-EC21-EE0F-9F07-102B5BDEADA9}</ProjectGuid>
+    <ProjectGuid>{088DE75A-4129-C448-554C-649B263967F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,7 +61,8 @@
     <Compile Include="Assets\Free Assets\Cars\Marcos Schultz\MS Sposts Car\Others\PromotionalMSVS.cs" />
     <Compile Include="Assets\Free Assets\Buildings\WhiteCity\Offer\Asset_Store_Offers.cs" />
     <Compile Include="Assets\Free Assets\Cars\Marcos Schultz\MS Sposts Car\Others\WheelMeshes.cs" />
-    <Compile Include="Assets\Scripts\LevelConfig.cs" />
+    <Compile Include="Assets\Configs\LevelConfig.cs" />
+    <Compile Include="Assets\Configs\CarConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

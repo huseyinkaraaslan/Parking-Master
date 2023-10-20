@@ -1,16 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Gameobject")]
+    public GameObject carStand;
+    private GameObject currentCar;
+
+    [Header("Button")]
     public Button nextCarButton;
     public Button previousCarButton;
-    public GameObject carStand;
-    private int currentCarIndex;
 
+    [Header("Text (Car Informations)")]
+    public TMP_Text carPrice;
+    public TMP_Text carMaxSpeed;
+    public TMP_Text carBraking;
+    public TMP_Text carAcceleration;
+
+    [Header("Car Config")]
+    public List<CarConfig> carInformations = new List<CarConfig>();
+
+    [Header("Variable")]
+    private int currentCarIndex;
     public int currentCarValue 
     { 
         get 
@@ -23,36 +38,31 @@ public class MenuManager : MonoBehaviour
             UpdateCarOnStand(); 
         } 
     }
-
-    private GameObject currentCar;
     public Vector3 carPoint;
+
     private void Start()
     {
-        nextCarButton.onClick.AddListener(nextCar);
-        previousCarButton.onClick.AddListener(previousCar);
+        nextCarButton.onClick.AddListener(NextCar);
+        previousCarButton.onClick.AddListener(PreviousCar);
 
-        if (currentCar == null)
-            currentCar = Instantiate(GameManager.Instance.lockedCars[0]);
-  
-        currentCar.transform.position = carPoint;
-
+        currentCar = Instantiate(GameManager.Instance.lockedCars[0], carPoint, Quaternion.identity);
+        GetCarInformation(carInformations[currentCarValue]);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         carStand.transform.Rotate(Vector3.up * Time.deltaTime * 10);
-        if(currentCar != null)
-            currentCar.transform.Rotate(Vector3.up * Time.deltaTime * 10);
+        currentCar.transform.Rotate(Vector3.up * Time.deltaTime * 10);
     }
 
-    private void previousCar()
+    private void PreviousCar()
     {
-        currentCarValue = currentCarValue == 0 ? 12 : --currentCarValue;
+        currentCarValue = currentCarValue == 0 ? GameManager.Instance.lockedCars.Count - 1 : --currentCarValue;
     }
 
-    private void nextCar()
+    private void NextCar()
     {
-        currentCarValue = currentCarValue == 12 ? 0 : ++currentCarValue;
+        currentCarValue = currentCarValue == GameManager.Instance.lockedCars.Count - 1 ? 0 : ++currentCarValue;
     }
 
     private void UpdateCarOnStand()
@@ -63,11 +73,26 @@ public class MenuManager : MonoBehaviour
             Destroy(currentCar);
             currentCar = Instantiate(GameManager.Instance.lockedCars[currentCarValue],carPoint, 
                 oldCar.transform.rotation);
+            GetCarInformation(carInformations[currentCarValue]);
         }   
+    }
+
+    private void GetCarInformation(CarConfig car)
+    {
+        carPrice.text = car.price.ToString();
+        carMaxSpeed.text = car.maxSpeed.ToString();
+        carBraking.text = car.braking.ToString();
+        carAcceleration.text = car.acceleration.ToString();
     }
 
     private void SelectCar()
     {
         GameManager.Instance.choosenCar = currentCarValue;
+    }
+
+    private void OnDestroy()
+    {
+        nextCarButton.onClick.RemoveAllListeners();
+        previousCarButton.onClick.RemoveAllListeners();
     }
 }

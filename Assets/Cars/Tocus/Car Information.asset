@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb069bcc27051874caa0ffe95e262583, type: 3}
   m_Name: Car Information
   m_EditorClassIdentifier: 
-  price: 1000
-  maxSpeed: 1000
-  braking: 1000
-  acceleration: 1000
+  price: 10000
+  maxSpeed: 20
+  braking: 15
+  acceleration: 10

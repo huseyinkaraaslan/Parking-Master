@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public List<LevelConfig> levelConfigs;
 
     [Header("Variable")]
+    public int money = 50000;
     public int currentLevel = 5;
     public int choosenCar = 0;
     public int currentLevelIndex
@@ -34,11 +35,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        unLockedCars = new List<GameObject>();
+        unLockedCars = new List<GameObject>(new GameObject[11]);
         Instance = this;
 
         if(!(unLockedCars.Contains(lockedCars[0])))
-            unLockedCars.Add(lockedCars[0]);
+            unLockedCars.Insert(0,lockedCars[0]);
 
         /*playerCar = Instantiate(unLockedCars[choosenCar]);
         playerCar.transform.position = levelConfigs[currentLevel].carSpawnPoint;*/

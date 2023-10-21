@@ -147,7 +147,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3434762290425571549}
   m_Center: {x: 0.01, y: 1.05, z: 0}
-  m_Radius: 4.74
+  m_Radius: 5.61
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -524,7 +524,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6233923400574717115}
   m_Center: {x: 0.01, y: 1.05, z: 0}
-  m_Radius: 4.74
+  m_Radius: 5.61
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -638,7 +638,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6233923400594841494}
   m_Center: {x: 0.01, y: 1.05, z: 0}
-  m_Radius: 4.74
+  m_Radius: 5.61
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -752,7 +752,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6233923400651295092}
   m_Center: {x: 0.01, y: 1.05, z: 0}
-  m_Radius: 4.74
+  m_Radius: 5.61
   m_SuspensionSpring:
     spring: 35000
     damper: 4500

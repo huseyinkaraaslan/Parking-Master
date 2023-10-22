@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -57,6 +58,8 @@ public class MenuManager : MonoBehaviour
 
         currentCar = Instantiate(GameManager.Instance.lockedCars[0], new Vector3(0, 5, 0), Quaternion.identity);
         GetCarInformation(carInformations[currentCarValue]);
+
+        //DataManager.Instance.SaveDataJson<GameObject>(GameManager.Instance.unLockedCars, "unlockedCarsData");
     }
 
     private void FixedUpdate()
@@ -79,8 +82,11 @@ public class MenuManager : MonoBehaviour
     {
         if(GameManager.Instance.money >= carInformations[currentCarValue].price)
         {
-            GameManager.Instance.unLockedCars[currentCarValue] = GameManager.Instance.lockedCars[currentCarValue];
+            GameManager.Instance.unLockedCars[currentCarValue] = GameManager.Instance.lockedCars[currentCarValue];           
             UpdateCarOnStand();
+
+            DataManager.Instance.unlockedCars = GameManager.Instance.unLockedCars;
+            DataManager.Instance.SaveData();
         }
     }
 

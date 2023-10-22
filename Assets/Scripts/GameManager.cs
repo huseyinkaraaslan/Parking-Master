@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -35,8 +36,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        unLockedCars = new List<GameObject>(new GameObject[11]);
         Instance = this;
+        unLockedCars = new List<GameObject>(new GameObject[11]);
 
         if(!(unLockedCars.Contains(lockedCars[0])))
             unLockedCars.Insert(0,lockedCars[0]);

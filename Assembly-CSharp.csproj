@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\LevelController.cs" />
+    <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Free Assets\Cars\Marcos Schultz\MS Sposts Car\Others\PromotionalMSVS.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="Assets\Scripts\DataManager.cs" />
     <Compile Include="Assets\Free Assets\Cars\Marcos Schultz\MS Sposts Car\Others\WheelMeshes.cs" />
     <Compile Include="Assets\Configs\LevelConfig.cs" />
-    <Compile Include="Assets\Scripts\LoadScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

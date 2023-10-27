@@ -14,8 +14,6 @@ public class MenuManager : MonoBehaviour
     private GameObject currentCar;
 
     public GameObject carStand;
-    public GameObject garageCamera;
-    public GameObject levelsCamera;
     public GameObject garage;
     public GameObject levels;
     
@@ -60,10 +58,7 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
-        garageCamera.SetActive(true);
         garage.SetActive(true);
-
-        levelsCamera.SetActive(false);
         levels.SetActive(false);
     }
 
@@ -117,10 +112,7 @@ public class MenuManager : MonoBehaviour
     }
     private void Play()
     {
-        garageCamera.SetActive(false);
-        garage.SetActive(false);
-
-        levelsCamera.SetActive(true);        
+        garage.SetActive(false);      
         levels.SetActive(true);
     }
 

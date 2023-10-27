@@ -19,13 +19,13 @@ public class LoadScene : MonoBehaviour
 
     public void LoadNextScene(string sceneName)
     {
+        loadScreen.SetActive(true);
         StartCoroutine(StartLoading(sceneName));
     }
 
     IEnumerator StartLoading(string sceneName)
     {
         loadingBar.value = 0;
-        loadScreen.SetActive(true);
         
         AsyncOperation async = SceneManager.LoadSceneAsync(sceneName);
         async.allowSceneActivation = false;

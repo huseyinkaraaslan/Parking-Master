@@ -325,6 +325,8 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 -r:"C:/Unity Projects/Parking-Master/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"C:/Unity Projects/Parking-Master/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Cinemachine.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/com.unity.cinemachine.editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.PlasticSCM.Editor.ref.dll"
@@ -358,6 +360,8 @@
 "Assets/Free Assets/Cars/Marcos Schultz/MS Sposts Car/Others/WheelMeshes.cs"
 "Assets/Scripts/DataManager.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/LevelController.cs"
+"Assets/Scripts/LoadScene.cs"
 "Assets/Scripts/MenuManager.cs"
 -langversion:9.0
 

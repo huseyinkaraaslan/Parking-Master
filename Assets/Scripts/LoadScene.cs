@@ -18,28 +18,26 @@ public class LoadScene : MonoBehaviour
     }
 
     public void LoadNextScene(string sceneName)
-    {
-        loadScreen.SetActive(true);
+    {       
         StartCoroutine(StartLoading(sceneName));
     }
 
     IEnumerator StartLoading(string sceneName)
     {
+        loadScreen.SetActive(true);
         loadingBar.value = 0;
         
         AsyncOperation async = SceneManager.LoadSceneAsync(sceneName);
-        async.allowSceneActivation = false;
 
         float progressValue = 0;
         while (!async.isDone)
         {
             progressValue = Mathf.MoveTowards(progressValue, async.progress, Time.deltaTime);
             loadingBar.value = progressValue;
+
             if(progressValue >= .9f)
-            {
                 loadingBar.value = 1;
-                async.allowSceneActivation = true;
-            }
+
             yield return null;
         }
 

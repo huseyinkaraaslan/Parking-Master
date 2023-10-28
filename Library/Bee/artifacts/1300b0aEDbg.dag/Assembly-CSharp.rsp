@@ -363,6 +363,7 @@
 "Assets/Scripts/LevelController.cs"
 "Assets/Scripts/LoadScene.cs"
 "Assets/Scripts/MenuManager.cs"
+"Assets/Scripts/VehicleController.cs"
 -langversion:9.0
 
 /deterministic

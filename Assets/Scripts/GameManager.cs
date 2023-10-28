@@ -31,11 +31,8 @@ public class GameManager : MonoBehaviour
         unLockedCars = new List<GameObject>(new GameObject[11]);
 
         if(!(unLockedCars.Contains(lockedCars[0])))
-            unLockedCars.Insert(0,lockedCars[0]);   
-    }
+            unLockedCars.Insert(0,lockedCars[0]);
 
-    private void Start()
-    {
         if (SceneManager.GetActiveScene().name == "Game")
         {
             playerCar = unLockedCars[PlayerPrefs.GetInt("chosenCar")];
@@ -44,6 +41,5 @@ public class GameManager : MonoBehaviour
             playerCar = Instantiate(playerCar);
             playerCar.transform.position = chosenLevel.carSpawnPoint;
         }
-            
     }
 }

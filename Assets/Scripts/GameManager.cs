@@ -15,8 +15,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerCar;
 
-    [Header("Level Config")]
+    [Header("Configs")]
     public List<LevelConfig> levelConfigs;
+    public List<CarConfig> carInformations = new List<CarConfig>();
 
     [Header("Variable")]
     public int money = 50000;

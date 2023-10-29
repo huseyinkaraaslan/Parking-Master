@@ -4019,6 +4019,18 @@ MonoBehaviour:
   playerCar: {fileID: 5078165040892294486, guid: b7463331d5946a74aa23399dc42b6424, type: 3}
   levelConfigs:
   - {fileID: 11400000, guid: fe55b7a1e6c54c440a210a59806349c3, type: 2}
+  carInformations:
+  - {fileID: 11400000, guid: 00850357f6c2dad4fa62b805417cf94e, type: 2}
+  - {fileID: 11400000, guid: 7f275f31fe17e1d4c9d1115eeb2e714f, type: 2}
+  - {fileID: 11400000, guid: bc70639a4428daf46a7bed96cfea8344, type: 2}
+  - {fileID: 11400000, guid: c2bd4988df3961d4c9af2e2125d2ae19, type: 2}
+  - {fileID: 11400000, guid: 35e39e2366f5e6e4e999e59f9a5148a8, type: 2}
+  - {fileID: 11400000, guid: b0bf7539a865ac4409fbaba1d91b9c75, type: 2}
+  - {fileID: 11400000, guid: 6dbf6ccdde916fc44bdf869f95c4ae6a, type: 2}
+  - {fileID: 11400000, guid: 11603067a8cc5aa40ac574ed9ae44d77, type: 2}
+  - {fileID: 11400000, guid: f5668048ff7db734f85f81ad627f6844, type: 2}
+  - {fileID: 11400000, guid: 821f627013d34e446b6d5b335f478c73, type: 2}
+  - {fileID: 11400000, guid: 84fe9a87ed4be7e4cb8c9b3c1d8f83cc, type: 2}
   money: 50000
   lastUnlockedLevel: 0
   chosenLevel: {fileID: 0}

@@ -35,9 +35,6 @@ public class MenuManager : MonoBehaviour
     public Slider carBrakingSlider;
     public Slider carAccelerationSlider;
 
-    [Header("Car Config")]
-    public List<CarConfig> carInformations = new List<CarConfig>();
-
     [Header("Lock Sprite")]
     public Image lockImage;
 
@@ -71,7 +68,7 @@ public class MenuManager : MonoBehaviour
         playButton.onClick.AddListener(Play);
 
         currentCar = Instantiate(GameManager.Instance.lockedCars[0], new Vector3(0, 5, 0), Quaternion.identity);
-        GetCarInformation(carInformations[currentCarValue]);
+        GetCarInformation(GameManager.Instance.carInformations[currentCarValue]);
     }
 
     
@@ -94,7 +91,7 @@ public class MenuManager : MonoBehaviour
 
     private void BuyCar()
     {
-        if(GameManager.Instance.money >= carInformations[currentCarValue].price)
+        if(GameManager.Instance.money >= GameManager.Instance.carInformations[currentCarValue].price)
         {
             GameManager.Instance.unLockedCars[currentCarValue] = GameManager.Instance.lockedCars[currentCarValue];           
             UpdateCarOnStand();
@@ -124,7 +121,7 @@ public class MenuManager : MonoBehaviour
             Destroy(currentCar);
             currentCar = Instantiate(GameManager.Instance.lockedCars[currentCarValue],new Vector3(0,5,0), 
                 oldCar.transform.rotation);
-            GetCarInformation(carInformations[currentCarValue]);
+            GetCarInformation(GameManager.Instance.carInformations[currentCarValue]);
         }   
     }
 

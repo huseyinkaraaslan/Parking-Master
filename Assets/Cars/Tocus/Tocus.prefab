@@ -151,8 +151,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385193265528552682}
-  m_LocalRotation: {x: 0.21668641, y: 0.2998008, z: -0.07012256, w: 0.9264175}
-  m_LocalPosition: {x: 0.0000016458036, y: 0, z: -0.0000009536743}
+  m_LocalRotation: {x: 0.21668638, y: 0.29980093, z: -0.07012258, w: 0.92641747}
+  m_LocalPosition: {x: 0.0000016458036, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1561,7 +1561,6 @@ GameObject:
   - component: {fileID: 5076566394844646400}
   - component: {fileID: 5045294859680694282}
   - component: {fileID: 5057067221856805736}
-  - component: {fileID: 3591176098636875946}
   m_Layer: 0
   m_Name: Tocus_Body
   m_TagString: Untagged
@@ -1636,19 +1635,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3591176098636875946
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5078103713598584358}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6215619, y: 1.1789596, z: 4.382035}
-  m_Center: {x: 0.00031422253, y: 0.41668016, z: 0.00068815873}
 --- !u!1 &5078165040892294486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,9 +1648,10 @@ GameObject:
   - component: {fileID: 2052801209829068734}
   - component: {fileID: 741986568444735694}
   - component: {fileID: 4016018384656215877}
+  - component: {fileID: 8981423329656071360}
   m_Layer: 0
   m_Name: Tocus
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1676,7 +1663,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5078165040892294486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.6467904, z: 0, w: 0.76266783}
   m_LocalPosition: {x: 10, y: 0.93097, z: 20}
   m_LocalScale: {x: 2.301, y: 2.223, z: 2}
   m_ConstrainProportionsScale: 0
@@ -1763,9 +1750,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraFolder: {fileID: 6906232609853299123}
-  mainCamera: {fileID: 7690127633142928816}
   freeLookCamera: {fileID: 9194508447859054348}
-  virtualCamera: {fileID: 0}
+--- !u!65 &8981423329656071360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5078165040892294486}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.631435, y: 1.2613249, z: 4.411473}
+  m_Center: {x: 0.0061902823, y: 0.47668168, z: 0.0142400265}
 --- !u!1 &5078173327310199296
 GameObject:
   m_ObjectHideFlags: 0
@@ -3661,8 +3659,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8094346496097029269}
-  m_LocalRotation: {x: 0.2752375, y: -0.25377917, z: 0.075579144, w: 0.92419064}
-  m_LocalPosition: {x: 2.7589998, y: 3.655, z: -5.344}
+  m_LocalRotation: {x: 0.19979945, y: 0.30102685, z: -0.064657755, w: 0.9302056}
+  m_LocalPosition: {x: -2.3525212, y: 2.0568268, z: -3.7438645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3694,9 +3692,9 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60.000004
+  field of view: 40
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

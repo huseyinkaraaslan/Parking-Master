@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -47,10 +48,14 @@ public class VehicleController : MonoBehaviour
     private bool isGasPedalPressed;
     private bool isBrakePedalPressed;
 
+    [Header("Car Rigidbody")]
+    private Rigidbody carRB;
     private void Start()
     {
         if(SceneManager.GetActiveScene().name != "Game")
             return;
+
+        carRB = gameObject.GetComponent<Rigidbody>();
         
         maximumSteeringAngle = 130f; maximumWheelAngle = 50;
         
@@ -68,6 +73,8 @@ public class VehicleController : MonoBehaviour
 
     private void Update()
     {
+        if(SceneManager.GetActiveScene().name != "Game")
+            return;
         UpdateSteeringView();
         PedalsController();
 
@@ -109,10 +116,14 @@ public class VehicleController : MonoBehaviour
         if (isGasPedalPressed)
         {
             CameraController.Instance.isFreeLookCameraActive = false;
-            if(RightBackWheelCollider.rpm < 
-                GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].maxSpeed)
+            if(GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].maxSpeed * Time.deltaTime * 1.5f> carRB.velocity.x && 
+               GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].maxSpeed * Time.deltaTime * 1.5f> carRB.velocity.z)
             {
                 float acceleration = GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].acceleration;
+
+                acceleration = GameManager.Instance.gearButton.GetComponentInChildren<TMP_Text>().text == "R"
+                    ? -acceleration
+                    : acceleration;
                 
                 leftBackWheelCollider.motorTorque = acceleration * motorTorqueForce;
                 RightBackWheelCollider.motorTorque = acceleration * motorTorqueForce;

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   carSpawnPoint: {x: 5.3, y: 1.3, z: 107.6}
-  carParkingPoint: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  carParkingPoint: {x: -183.6, y: 0.03, z: 94.8}
+  carSpawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  parkingAreaRotation: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}

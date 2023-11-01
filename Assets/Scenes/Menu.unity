@@ -632,7 +632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &201468981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1085,7 +1085,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283413375}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.6421353, y: 13.342971, z: 1.3448}
   m_ConstrainProportionsScale: 0
@@ -1520,7 +1520,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.5, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2054,7 +2054,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4133,7 +4133,9 @@ MonoBehaviour:
   - {fileID: 3821200138417257775, guid: 50dae665e03a8e84e8873d9aeb4798f1, type: 3}
   - {fileID: 5952727266151886316, guid: b541b57331004454e974af15301dbc9c, type: 3}
   unLockedCars: []
+  levelCompletedScene: {fileID: 0}
   playerCar: {fileID: 5078165040892294486, guid: b7463331d5946a74aa23399dc42b6424, type: 3}
+  parkingArea: {fileID: 0}
   levelConfigs:
   - {fileID: 11400000, guid: fe55b7a1e6c54c440a210a59806349c3, type: 2}
   carInformations:
@@ -4153,6 +4155,9 @@ MonoBehaviour:
   money: 999999
   lastUnlockedLevel: 0
   chosenLevel: {fileID: 0}
+  nextLevelButton: {fileID: 0}
+  restartButton: {fileID: 0}
+  menuButton: {fileID: 0}
 --- !u!114 &1358473231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4187,6 +4192,22 @@ MonoBehaviour:
   - {fileID: 2031551332}
   - {fileID: 1517966141}
   - {fileID: 1845285815}
+  levelTexts:
+  - {fileID: 998090725}
+  - {fileID: 1401992668}
+  - {fileID: 697857719}
+  - {fileID: 248858837}
+  - {fileID: 80285502}
+  - {fileID: 456613678}
+  - {fileID: 456643722}
+  levelLocks:
+  - {fileID: 2034286802}
+  - {fileID: 846348384}
+  - {fileID: 1362508462}
+  - {fileID: 425680661}
+  - {fileID: 1601762664}
+  - {fileID: 1658592357}
+  - {fileID: 1052614163}
   chosenLevel: 0
 --- !u!114 &1358473233
 MonoBehaviour:
@@ -4226,7 +4247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ededec89e1b50641a55d36f88dd1c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadScreen: {fileID: 2061798086}
+  loadScreen: {fileID: 201468980}
   loadingBar: {fileID: 1583126334}
 --- !u!1 &1362508460
 GameObject:
@@ -4981,7 +5002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1486108579
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6168,7 +6189,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 36000
+  m_text: 99999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8c812649cb994ba4b9e70625b97ba6bf, type: 2}
   m_sharedMaterial: {fileID: -5413685464059606182, guid: 8c812649cb994ba4b9e70625b97ba6bf, type: 2}
@@ -6195,7 +6216,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.3
+  m_fontSize: 33.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

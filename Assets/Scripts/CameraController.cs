@@ -10,9 +10,13 @@ public class CameraController : MonoBehaviour
 {
     public static CameraController Instance { get; set; }
     
+    [Header("Camera Settings")]
     public GameObject cameraFolder;
     public CinemachineFreeLook freeLookCamera;
+    
+    [Header("Camera State")]
     private bool _isFreeLookCameraActive;
+    
     public bool isFreeLookCameraActive
     {
         set

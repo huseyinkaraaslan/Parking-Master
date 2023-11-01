@@ -49,11 +49,15 @@ public class VehicleController : MonoBehaviour
 
     private void Start()
     {
+        if(SceneManager.GetActiveScene().name != "Game")
+            return;
+        
         maximumSteeringAngle = 130f; maximumWheelAngle = 50;
-
+        
         steeringWheel = GameObject.FindWithTag("SteeringWheel").GetComponent<Image>();
         gasPedal = GameObject.FindWithTag("GasPedal").GetComponent<Image>();
         brakePedal = GameObject.FindWithTag("BrakePedal").GetComponent<Image>();
+
         rectT = steeringWheel.rectTransform;
         steeringWheelCenterPoint = rectT.position;
 
@@ -77,6 +81,7 @@ public class VehicleController : MonoBehaviour
     {
         if (!steeringHeld)
         {
+            CameraController.Instance.isFreeLookCameraActive = true;
             float delta = wheelReleaseSpeed * Time.deltaTime;
 
             if (Math.Abs(delta) > Mathf.Abs(wheelAngle))
@@ -91,6 +96,9 @@ public class VehicleController : MonoBehaviour
             leftFrontWheelTransform.rotation = Quaternion.Euler(new Vector3(0, wheelAngle, 0));
             RightFrontWheelTransform.rotation = Quaternion.Euler(new Vector3(0, wheelAngle, 0));
         }
+        else
+            CameraController.Instance.isFreeLookCameraActive = false;
+            
 
         if (SceneManager.GetActiveScene().name == "Game")
             rectT.localEulerAngles = Vector3.back * wheelAngle;
@@ -100,20 +108,29 @@ public class VehicleController : MonoBehaviour
     {
         if (isGasPedalPressed)
         {
-            float acceleration = GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].acceleration;
-
-            leftBackWheelCollider.motorTorque = acceleration * motorTorqueForce;
-            RightBackWheelCollider.motorTorque = acceleration * motorTorqueForce;
-            motorTorqueForce += 0.3f;
-
+            CameraController.Instance.isFreeLookCameraActive = false;
+            if(RightBackWheelCollider.rpm < 
+                GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].maxSpeed)
+            {
+                float acceleration = GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].acceleration;
+                
+                leftBackWheelCollider.motorTorque = acceleration * motorTorqueForce;
+                RightBackWheelCollider.motorTorque = acceleration * motorTorqueForce;
+                motorTorqueForce += 0.3f;
+            }         
         }
         else if (isBrakePedalPressed)
         {
+            CameraController.Instance.isFreeLookCameraActive = false;
             float braking = GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].braking;
 
             leftBackWheelCollider.brakeTorque = braking * motorBrakeForce;
             RightBackWheelCollider.brakeTorque = braking * motorBrakeForce;
             motorBrakeForce += 0.6f;
+        }
+        else if (!steeringHeld)
+        {
+            CameraController.Instance.isFreeLookCameraActive = true;
         }
     }
 
@@ -149,11 +166,14 @@ public class VehicleController : MonoBehaviour
 
     private void GasPressEvent(BaseEventData eventData)
     {
-        isGasPedalPressed = true;     
+        isGasPedalPressed = true;
     }
 
     private void GasReleaseEvent(BaseEventData eventData)
     {
+        leftBackWheelCollider.motorTorque = 0;
+        RightBackWheelCollider.motorTorque = 0;
+        motorTorqueForce = 5;
         isGasPedalPressed = false;
     }
 
@@ -185,6 +205,9 @@ public class VehicleController : MonoBehaviour
 
     private void BrakeReleaseEvent(BaseEventData arg0)
     {
+        leftBackWheelCollider.brakeTorque = 0;
+        RightBackWheelCollider.brakeTorque = 0;
+        motorBrakeForce = 6;
         isBrakePedalPressed = false;
     }
 

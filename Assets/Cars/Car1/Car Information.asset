@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Car Information
   m_EditorClassIdentifier: 
   price: 15000
-  maxSpeed: 30
-  braking: 5
-  acceleration: 15
+  maxSpeed: 23
+  braking: 10
+  acceleration: 17

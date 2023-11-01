@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31416f8e26a572e4db806306dc8b3067, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  carSpawnPoint: {x: -15, y: 1, z: -70}
+  carSpawnPoint: {x: 5.3, y: 1.3, z: 107.6}
   carParkingPoint: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}

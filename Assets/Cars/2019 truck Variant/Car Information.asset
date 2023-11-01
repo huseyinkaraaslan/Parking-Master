@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 21000
   maxSpeed: 35
-  braking: 30
-  acceleration: 15
+  braking: 25
+  acceleration: 13

@@ -8,4 +8,5 @@ public class LevelConfig : ScriptableObject
 {
     public Vector3 carSpawnPoint;
     public Vector3 carParkingPoint;
+    public Quaternion rotation;
 }

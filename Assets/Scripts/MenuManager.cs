@@ -26,9 +26,7 @@ public class MenuManager : MonoBehaviour
 
     [Header("Text (Car Informations)")]
     public TMP_Text carPrice;
-    public TMP_Text carMaxSpeed;
-    public TMP_Text carBraking;
-    public TMP_Text carAcceleration;
+    public TMP_Text money;
 
     [Header("Slider")]
     public Slider carMaxSpeedSlider;
@@ -67,12 +65,11 @@ public class MenuManager : MonoBehaviour
         selectButton.onClick.AddListener(SelectCar);
         playButton.onClick.AddListener(Play);
 
+        money.text = GameManager.Instance.money.ToString();
         currentCar = Instantiate(GameManager.Instance.lockedCars[0], new Vector3(0, 5, 0), Quaternion.identity);
         GetCarInformation(GameManager.Instance.carInformations[currentCarValue]);
     }
-
     
-
     private void FixedUpdate()
     {
         carStand.transform.Rotate(Vector3.up * Time.deltaTime * 10);
@@ -94,10 +91,12 @@ public class MenuManager : MonoBehaviour
         if(GameManager.Instance.money >= GameManager.Instance.carInformations[currentCarValue].price)
         {
             GameManager.Instance.unLockedCars[currentCarValue] = GameManager.Instance.lockedCars[currentCarValue];           
-            UpdateCarOnStand();
-
             DataManager.Instance.unlockedCars = GameManager.Instance.unLockedCars;
             DataManager.Instance.SaveData();
+            GetCarInformation(GameManager.Instance.carInformations[currentCarValue]);
+            
+            GameManager.Instance.money -= GameManager.Instance.carInformations[currentCarValue].price;
+            money.text = GameManager.Instance.money.ToString();
         }
     }
 
@@ -105,7 +104,7 @@ public class MenuManager : MonoBehaviour
     {
         carPrice.text = "Selected";
         PlayerPrefs.SetInt("chosenCar", currentCarValue);
-        UpdateCarOnStand();
+        GetCarInformation(GameManager.Instance.carInformations[currentCarValue]);
     }
     private void Play()
     {

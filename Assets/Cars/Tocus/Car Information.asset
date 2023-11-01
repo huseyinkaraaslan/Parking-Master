@@ -15,4 +15,4 @@ MonoBehaviour:
   price: 10000
   maxSpeed: 20
   braking: 15
-  acceleration: 10
+  acceleration: 15

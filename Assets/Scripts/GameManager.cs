@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public List<CarConfig> carInformations = new List<CarConfig>();
 
     [Header("Variable")]
-    public int money = 50000;
+    public int money;
     public int lastUnlockedLevel = 1;
     public LevelConfig chosenLevel;
 
@@ -29,18 +29,19 @@ public class GameManager : MonoBehaviour
     {
         lastUnlockedLevel = PlayerPrefs.GetInt(nameof(lastUnlockedLevel), 1);
         Instance = this;
-        unLockedCars = new List<GameObject>(new GameObject[11]);
+        unLockedCars = new List<GameObject>(new GameObject[12]);
 
         if(!(unLockedCars.Contains(lockedCars[0])))
             unLockedCars.Insert(0,lockedCars[0]);
 
-        if (SceneManager.GetActiveScene().name == "Game")
-        {
-            playerCar = unLockedCars[PlayerPrefs.GetInt("chosenCar")];
-            chosenLevel = levelConfigs[PlayerPrefs.GetInt("chosenLevel")];
+        if (SceneManager.GetActiveScene().name != "Game")
+            return;
+        
+        playerCar = unLockedCars[PlayerPrefs.GetInt("chosenCar")];
+        chosenLevel = levelConfigs[PlayerPrefs.GetInt("chosenLevel")];
 
-            playerCar = Instantiate(playerCar);
-            playerCar.transform.position = chosenLevel.carSpawnPoint;
-        }
+        playerCar = Instantiate(playerCar);
+        playerCar.transform.position = chosenLevel.carSpawnPoint;
+        playerCar.transform.rotation = chosenLevel.rotation;
     }
 }

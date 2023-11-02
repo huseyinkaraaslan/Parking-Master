@@ -117,7 +117,8 @@ public class VehicleController : MonoBehaviour
         {
             CameraController.Instance.isFreeLookCameraActive = false;
             if(GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].maxSpeed * Time.deltaTime * 1.5f> carRB.velocity.x && 
-               GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].maxSpeed * Time.deltaTime * 1.5f> carRB.velocity.z)
+               GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].maxSpeed * Time.deltaTime * 1.5f> carRB.velocity.z && 
+               GameManager.Instance.gearButton.GetComponentInChildren<TMP_Text>().text != "P")
             {
                 float acceleration = GameManager.Instance.carInformations[PlayerPrefs.GetInt("ChosenCar")].acceleration;
 

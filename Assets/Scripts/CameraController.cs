@@ -24,13 +24,13 @@ public class CameraController : MonoBehaviour
             _isFreeLookCameraActive = value;
             if (_isFreeLookCameraActive)
             {
-                freeLookCamera.GetComponent<CinemachineTouchInputMapper>().TouchXInputMapTo = "Mouse X";
-                freeLookCamera.GetComponent<CinemachineTouchInputMapper>().TouchYInputMapTo = "Mouse Y";
+                freeLookCamera.m_XAxis.m_InputAxisName = "Mouse X";
+                freeLookCamera.m_YAxis.m_InputAxisName = "Mouse Y";
             }
             else
             {
-                freeLookCamera.GetComponent<CinemachineTouchInputMapper>().TouchXInputMapTo = "null";
-                freeLookCamera.GetComponent<CinemachineTouchInputMapper>().TouchYInputMapTo = "null";
+                freeLookCamera.m_XAxis.m_InputAxisName = "";
+                freeLookCamera.m_YAxis.m_InputAxisName = "";
             }
         }
     }

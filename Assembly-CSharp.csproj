@@ -539,6 +539,7 @@
      <Folder Include="Assets\Free Assets\Cars\SketchFab\nissan-gt\textures" />
      <Folder Include="Assets\Free Assets\Cars\Cars\Models\2019 long truck" />
      <Folder Include="Assets\Free Assets\Cars\SketchFab\mercedes-amg-one\source\mercedes-amg-project-one\textures" />
+     <None Include="Assets\Data\UnlockedCarsData.json" />
      <Folder Include="Assets\Free Assets\Buildings\buildings-faces-high-quality\source\Texturas\4K" />
      <Folder Include="Assets\Free Assets\Buildings\WhiteCity\Prefabs" />
      <Folder Include="Assets\Free Assets\Streets\Roads\LowpolyStreetPack\Meshes\Textures" />

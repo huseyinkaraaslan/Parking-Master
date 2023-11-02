@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31416f8e26a572e4db806306dc8b3067, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  carSpawnPoint: {x: 5.3, y: 1.3, z: 107.6}
+  carSpawnPoint: {x: 184, y: 0.62, z: 222}
   carParkingPoint: {x: -183.6, y: 0.03, z: 94.8}
-  carSpawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  carSpawnRotation: {x: 0, y: 0, z: 0, w: 1}
   parkingAreaRotation: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
